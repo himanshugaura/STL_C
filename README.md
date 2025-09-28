@@ -21,15 +21,15 @@
     ```
 3. Build your project as usual.
 
-Build the project:
+1. Build the project:
     ```bash
     make
     ```
-Run the demo executable:
+2. Run the demo executable:
     ```bash
     ./stl_demo
     ```
-Clean build files:
+3. Clean build files:
     ```bash
     make clean
     ```
