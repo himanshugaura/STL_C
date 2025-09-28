@@ -1,21 +1,43 @@
 #include <stdio.h>
 #include "vector.h"
+#include "stack.h"
 
 int main() {
-    Vector *v = vector_init(sizeof(int));
+    // ----------------- VECTOR DEMO -----------------
+    Vector *v = vector_init(sizeof(char));
 
-    for (int i=1; i<=5; i++)
-        vector_push(v, &i);
+    vector_push(v, &(char){'A'});
+    vector_push(v, &(char){'B'});
+    vector_push(v, &(char){'C'});
+    vector_push(v, &(char){'D'});
 
     printf("Vector contents: ");
-    for (size_t i=0; i<vector_size(v); i++)
-        printf("%d ", vector_val(v, int, i));
+    for (size_t i = 0; i < vector_size(v); i++)
+        printf("%c ", vector_val(v, char, i));
     printf("\n");
 
-    int last;
+    char last;
     vector_pop(v, &last);
-    printf("Popped: %d\n", last);
+    printf("Vector popped: %c\n", last);
 
     vector_free(v);
+
+    // ----------------- STACK DEMO -----------------
+    Stack *s = stack_init(sizeof(char));
+
+    stack_push(s, &(char){'X'});
+    stack_push(s, &(char){'Y'});
+    stack_push(s, &(char){'Z'});
+
+    printf("Stack contents (top to bottom): ");
+    while (!stack_empty(s)) {
+        char top = *(char*)stack_top(s);
+        printf("%c ", top);
+        stack_pop(s, &top);             
+    }
+    printf("\n");
+
+    stack_free(s);
+
     return 0;
 }
