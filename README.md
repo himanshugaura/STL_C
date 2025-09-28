@@ -19,17 +19,15 @@
     #include "stack.h"
     // etc.
     ```
-3. Build your project as usual.
-
-Build the project:
+3. Build the project:
     ```bash
     make
     ```
-Run the demo executable:
+4. Run the demo executable:
     ```bash
     ./stl_demo
     ```
-Clean build files:
+5. Clean build files:
     ```bash
     make clean
     ```
